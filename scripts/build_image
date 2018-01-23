@@ -1,0 +1,11 @@
+#! /bin/zsh
+
+$PWD/scripts/build
+
+$PWD/scripts/import_cert
+
+docker build -t go_docker_sample .
+
+echo "Cleaning up..."
+rm -f ca-certificates.crt
+$PWD/scripts/clean
