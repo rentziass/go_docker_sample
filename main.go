@@ -19,5 +19,5 @@ func index(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		io.WriteString(w, "Si e verificato un errore")
 	}
-	io.WriteString(w, "Hello from a Golang app inside a container! It's nice and warm in here! 🍻 I am "+name)
+	io.WriteString(w, "Hello from a Golang app inside a container! It's nice and warm in here! 🍻 I am "+name+" and I'm proud to be here!")
 }

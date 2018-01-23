@@ -3,7 +3,7 @@
 $PWD/scripts/build
 
 $PWD/scripts/import_cert
-image_name="registry.gitlab.com/rentziass/go_docker_sample:$(git describe --tags)"
+image_name="registry.gitlab.com/rentziass/go_docker_sample:$(git describe --tags):latest"
 docker build -t $image_name .
 
 echo "Cleaning up..."

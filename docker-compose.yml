@@ -8,9 +8,8 @@ volumes:
 
 services:
   app:
-    image: registry.gitlab.com/rentziass/go_docker_sample:0.2
+    image: registry.gitlab.com/rentziass/go_docker_sample:0.3
     restart: always
-    scale: 3
     expose:
       - "3000"
 
