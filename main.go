@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"os"
 )
 
 func main() {
@@ -14,5 +15,9 @@ func main() {
 }
 
 func index(w http.ResponseWriter, r *http.Request) {
-	io.WriteString(w, "Hello from a Golang app inside a container! It's nice and warm in here! 🍻")
+	name, err := os.Hostname()
+	if err != nil {
+		io.WriteString(w, "Si e verificato un errore")
+	}
+	io.WriteString(w, "Hello from a Golang app inside a container! It's nice and warm in here! 🍻 I am "+name)
 }
