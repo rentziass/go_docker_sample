@@ -14,5 +14,5 @@ func main() {
 }
 
 func index(w http.ResponseWriter, r *http.Request) {
-	io.WriteString(w, "Hello from a Golang app inside a container!")
+	io.WriteString(w, "Hello from a Golang app inside a container! It's nice and warm in here! 🍻")
 }
