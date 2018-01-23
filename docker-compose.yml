@@ -1,0 +1,28 @@
+version: "2"
+
+volumes:
+  certs:
+    external: false
+  certs-data:
+      external: false
+
+services:
+  app:
+    image: registry.gitlab.com/rentziass/go_docker_sample
+    restart: always
+    expose:
+      - "3000"
+
+  web:
+    image: danieldent/nginx-ssl-proxy
+    restart: always
+    environment:
+      UPSTREAM: app:3000
+      SERVERNAME: cazzimma.club
+      EXTRANAMES: www.cazzimma.club
+    volumes:
+      - certs:/etc/letsencrypt
+      - certs-data:/data/letsencrypt
+    ports:
+      - "80:80"
+      - "443:443"

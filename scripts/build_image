@@ -3,8 +3,8 @@
 $PWD/scripts/build
 
 $PWD/scripts/import_cert
-
-docker build -t go_docker_sample .
+image_name="registry.gitlab.com/rentziass/go_docker_sample:$(git describe --tags)"
+docker build -t $image_name .
 
 echo "Cleaning up..."
 rm -f ca-certificates.crt
